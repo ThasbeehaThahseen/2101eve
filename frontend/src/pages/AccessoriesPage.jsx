@@ -10,7 +10,7 @@ export const AccessoriesPage = () => {
   const navigate = useNavigate();
   const { subcategory } = useParams();
 
-  // Get gender selection if coming from accessories detail page
+  // Get accessories categories
   const accessoriesCategories = categories.accessories || [];
 
   // If no subcategory, show main accessories categories
@@ -31,7 +31,7 @@ export const AccessoriesPage = () => {
               <Card 
                 key={category.id} 
                 className="category-card"
-                onClick={() => navigate(`/accessories/${category.id}`)}
+                onClick={() => navigate(`/products/accessories/${category.id}`)}
                 data-testid={`category-${category.id}`}
               >
                 <CardContent className="category-card-content">
@@ -51,61 +51,6 @@ export const AccessoriesPage = () => {
     );
   }
 
-  // If subcategory is selected, show gender selection
-  const selectedCategory = accessoriesCategories.find(cat => cat.id === subcategory);
-
-  return (
-    <div className="accessories-page" data-testid="accessories-gender-page">
-      <div className="page-header">
-        <Button variant="ghost" onClick={() => navigate('/category/accessories')} className="back-btn" data-testid="back-btn">
-          <ArrowLeft size={20} /> Back
-        </Button>
-        <h1 className="page-title">{selectedCategory?.name || 'Accessories'}</h1>
-        <p className="page-subtitle">Select category</p>
-      </div>
-
-      <section className="gender-selection-section">
-        <div className="gender-selection-grid">
-          <Card 
-            className="gender-selection-card"
-            onClick={() => navigate(`/products/men/${subcategory}`)}
-            data-testid="men-card"
-          >
-            <CardContent className="gender-selection-content">
-              <h3>Men's {selectedCategory?.name}</h3>
-              <Button variant="ghost" className="select-btn">
-                View <ChevronRight size={18} />
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card 
-            className="gender-selection-card"
-            onClick={() => navigate(`/products/women/${subcategory}`)}
-            data-testid="women-card"
-          >
-            <CardContent className="gender-selection-content">
-              <h3>Women's {selectedCategory?.name}</h3>
-              <Button variant="ghost" className="select-btn">
-                View <ChevronRight size={18} />
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card 
-            className="gender-selection-card"
-            onClick={() => navigate(`/products/kids/${subcategory}`)}
-            data-testid="kids-card"
-          >
-            <CardContent className="gender-selection-content">
-              <h3>Kids' {selectedCategory?.name}</h3>
-              <Button variant="ghost" className="select-btn">
-                View <ChevronRight size={18} />
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-    </div>
-  );
+  // If subcategory is selected, redirect to products page
+  return null;
 };
