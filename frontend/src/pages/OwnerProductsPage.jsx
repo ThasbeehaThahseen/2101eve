@@ -149,22 +149,70 @@ export const OwnerProductsPage = () => {
   }
 
   const getPageTitle = () => {
-    if (section === 'kids' && ageGroup && gender) {
-      return `${gender.charAt(0).toUpperCase() + gender.slice(1)} (${ageGroup} years)`;
+    if (section === 'kids' && ageGroup && gender && category) {
+      return `${gender.charAt(0).toUpperCase() + gender.slice(1)}s - ${category.charAt(0).toUpperCase() + category.slice(1)} (${ageGroup} years)`;
+    } else if (section === 'kids' && ageGroup && gender) {
+      return `${gender.charAt(0).toUpperCase() + gender.slice(1)}s (${ageGroup} years)`;
     }
     return category ? category.charAt(0).toUpperCase() + category.slice(1) : 'Products';
   };
+
+  // Show subcategories for kids section
+  if (showSubcategories) {
+    return (
+      <div className="owner-products-page">
+        <header className="products-header">
+          <Button 
+            variant="outline" 
+            onClick={() => navigate(`/owner/section/${section}`)}
+            data-testid="back-to-section-btn"
+          >
+            <ArrowLeft size={18} />
+            Back to Section
+          </Button>
+          <div className="products-header-content">
+            <h1>{getPageTitle()}</h1>
+            <p>Select a subcategory</p>
+          </div>
+        </header>
+
+        <div className="subcategories-grid">
+          {KIDS_SUBCATEGORIES.map((subcat) => (
+            <Card 
+              key={subcat.id}
+              className="subcategory-card"
+              onClick={() => navigate(`/owner/products/${section}/${ageGroup}/${gender}/${subcat.id}`)}
+              data-testid={`subcategory-${subcat.id}`}
+            >
+              <CardContent className="subcategory-card-content">
+                <h3>{subcat.name}</h3>
+                <Button variant="ghost" size="sm">
+                  View Products
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="owner-products-page">
       <header className="products-header">
         <Button 
           variant="outline" 
-          onClick={() => navigate(`/owner/section/${section}`)}
+          onClick={() => {
+            if (section === 'kids' && ageGroup && gender && category) {
+              navigate(`/owner/products/${section}/${ageGroup}/${gender}`);
+            } else {
+              navigate(`/owner/section/${section}`);
+            }
+          }}
           data-testid="back-to-section-btn"
         >
           <ArrowLeft size={18} />
-          Back to Section
+          {section === 'kids' && category ? 'Back to Subcategories' : 'Back to Section'}
         </Button>
         <div className="products-header-content">
           <h1>{getPageTitle()}</h1>
