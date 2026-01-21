@@ -40,16 +40,14 @@ export const OwnerSectionPage = () => {
         { id: 'inner-wears', name: 'Inner Wears' }
       ],
       kids: [
-        { id: 'boys-0-3', name: 'Boys (0-3 years)', ageGroup: '0-3', gender: 'boys' },
-        { id: 'boys-3-6', name: 'Boys (3-6 years)', ageGroup: '3-6', gender: 'boys' },
-        { id: 'boys-6-9', name: 'Boys (6-9 years)', ageGroup: '6-9', gender: 'boys' },
-        { id: 'boys-9-12', name: 'Boys (9-12 years)', ageGroup: '9-12', gender: 'boys' },
-        { id: 'boys-12-15', name: 'Boys (12-15 years)', ageGroup: '12-15', gender: 'boys' },
-        { id: 'girls-0-3', name: 'Girls (0-3 years)', ageGroup: '0-3', gender: 'girls' },
-        { id: 'girls-3-6', name: 'Girls (3-6 years)', ageGroup: '3-6', gender: 'girls' },
-        { id: 'girls-6-9', name: 'Girls (6-9 years)', ageGroup: '6-9', gender: 'girls' },
-        { id: 'girls-9-12', name: 'Girls (9-12 years)', ageGroup: '9-12', gender: 'girls' },
-        { id: 'girls-12-15', name: 'Girls (12-15 years)', ageGroup: '12-15', gender: 'girls' }
+        { id: 'boys-0-3', name: 'Boys (0-3 years)', ageGroup: '0-3', gender: 'boy' },
+        { id: 'boys-4-7', name: 'Boys (4-7 years)', ageGroup: '4-7', gender: 'boy' },
+        { id: 'boys-8-11', name: 'Boys (8-11 years)', ageGroup: '8-11', gender: 'boy' },
+        { id: 'boys-12-15', name: 'Boys (12-15 years)', ageGroup: '12-15', gender: 'boy' },
+        { id: 'girls-0-3', name: 'Girls (0-3 years)', ageGroup: '0-3', gender: 'girl' },
+        { id: 'girls-4-7', name: 'Girls (4-7 years)', ageGroup: '4-7', gender: 'girl' },
+        { id: 'girls-8-11', name: 'Girls (8-11 years)', ageGroup: '8-11', gender: 'girl' },
+        { id: 'girls-12-15', name: 'Girls (12-15 years)', ageGroup: '12-15', gender: 'girl' }
       ],
       accessories: [
         { id: 'belts', name: 'Belts', directToAdd: true },
