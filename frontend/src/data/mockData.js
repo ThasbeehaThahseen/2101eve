@@ -155,12 +155,9 @@ export const categories = {
   ],
   accessories: [
     { id: 'belts', name: 'Belts', icon: 'Package' },
-    { id: 'raincoats', name: 'Raincoats', icon: 'Package' },
-    { id: 'socks', name: 'Socks', icon: 'Package' },
-    { id: 'shoelaces', name: 'Shoe Laces', icon: 'Package' },
-    { id: 'sweaters', name: 'Sweaters', icon: 'Package' },
     { id: 'towels', name: 'Towels', icon: 'Package' },
-    { id: 'handkerchiefs', name: 'Handkerchiefs', icon: 'Package' }
+    { id: 'handkerchiefs', name: 'Handkerchiefs', icon: 'Package' },
+    { id: 'others', name: 'Others', icon: 'Package' }
   ]
 };
 
