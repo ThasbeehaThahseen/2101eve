@@ -21,6 +21,13 @@ import './OwnerProductsPage.css';
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
+const KIDS_SUBCATEGORIES = [
+  { id: 'traditional', name: 'Traditional' },
+  { id: 'casual', name: 'Casual' },
+  { id: 'party', name: 'Party Wears' },
+  { id: 'nightwear', name: 'Night Wears' }
+];
+
 export const OwnerProductsPage = () => {
   const navigate = useNavigate();
   const { section, category, ageGroup, gender } = useParams();
@@ -32,6 +39,7 @@ export const OwnerProductsPage = () => {
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [productToDelete, setProductToDelete] = useState(null);
   const [expandedProduct, setExpandedProduct] = useState(null);
+  const [showSubcategories, setShowSubcategories] = useState(false);
 
   useEffect(() => {
     if (!loading && !isAuthenticated) {
@@ -40,7 +48,12 @@ export const OwnerProductsPage = () => {
   }, [isAuthenticated, loading, navigate]);
 
   useEffect(() => {
-    if (isAuthenticated) {
+    // For kids section, show subcategories first instead of products
+    if (section === 'kids' && ageGroup && gender && !category) {
+      setShowSubcategories(true);
+      setLoadingProducts(false);
+    } else if (isAuthenticated) {
+      setShowSubcategories(false);
       loadProducts();
     }
   }, [isAuthenticated, section, category, ageGroup, gender]);
