@@ -50,8 +50,10 @@ function App() {
               <Route path="/owner/section/:section" element={<OwnerSectionPage />} />
               <Route path="/owner/products/:section/:category" element={<OwnerProductsPage />} />
               <Route path="/owner/products/:section/:ageGroup/:gender" element={<OwnerProductsPage />} />
+              <Route path="/owner/products/:section/:ageGroup/:gender/:category" element={<OwnerProductsPage />} />
               <Route path="/owner/add-product/:section/:category" element={<AddProductPage />} />
               <Route path="/owner/add-product/:section/:ageGroup/:gender" element={<AddProductPage />} />
+              <Route path="/owner/add-product/:section/:ageGroup/:gender/:category" element={<AddProductPage />} />
               <Route path="/owner/edit-product/:productId" element={<EditProductPage />} />
             </Routes>
             <Footer />
