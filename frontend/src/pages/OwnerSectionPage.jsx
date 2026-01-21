@@ -61,14 +61,10 @@ export const OwnerSectionPage = () => {
   };
 
   const handleCategoryClick = (category) => {
-    // For accessories, go directly to Add Product page
-    if (section === 'accessories' && category.directToAdd) {
-      navigate(`/owner/add-product/${section}/${category.id}`);
-      return;
-    }
-    
     if (section === 'kids') {
       navigate(`/owner/products/${section}/${category.ageGroup}/${category.gender}`);
+    } else if (section === 'accessories') {
+      navigate(`/owner/products/${section}/${category.id}`);
     } else {
       navigate(`/owner/products/${section}/${category.id}`);
     }
