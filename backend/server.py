@@ -727,6 +727,17 @@ async def get_age_groups():
     """Get kids age groups"""
     return {"age_groups": AGE_GROUPS}
 
+@api_router.get("/metadata/kids-subcategories")
+async def get_kids_subcategories():
+    """Get kids subcategories"""
+    return {"subcategories": KIDS_SUBCATEGORIES}
+
+@api_router.get("/metadata/accessories-subcategories")
+async def get_accessories_subcategories():
+    """Get accessories subcategories"""
+    return {"subcategories": ACCESSORIES_SUBCATEGORIES}
+
+
 @api_router.post("/metadata/fabrics")
 async def add_custom_fabric(fabric_name: str = Form(...), username: str = Depends(verify_token)):
     """Add a custom fabric to the list"""
