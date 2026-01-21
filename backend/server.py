@@ -163,7 +163,13 @@ SIZE_OPTIONS_NUMBERS = ["24", "26", "28", "30", "32", "34", "36", "38", "40", "4
 SIZE_OPTIONS_KIDS = ["0-1Y", "1-2Y", "2-3Y", "3-4Y", "4-5Y", "5-6Y", "6-7Y", "7-8Y", "8-9Y", "9-10Y", "10-11Y", "11-12Y", "12-13Y", "13-14Y", "14-15Y"]
 
 # Kids Age Groups (broader ranges)
-AGE_GROUPS = ["0-3", "3-6", "6-9", "9-12", "12-15"]
+AGE_GROUPS = ["0-3", "4-7", "8-11", "12-15"]
+
+# Kids Subcategories
+KIDS_SUBCATEGORIES = ["traditional", "casual", "party", "nightwear"]
+
+# Accessories Subcategories
+ACCESSORIES_SUBCATEGORIES = ["belts", "towels", "handkerchiefs", "others"]
 
 # ==================== MODELS ====================
 
