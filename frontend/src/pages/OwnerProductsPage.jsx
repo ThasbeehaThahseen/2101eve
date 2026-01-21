@@ -63,7 +63,9 @@ export const OwnerProductsPage = () => {
       setLoadingProducts(true);
       let query = `category=${section}`;
       
-      if (section === 'kids' && ageGroup && gender) {
+      if (section === 'kids' && ageGroup && gender && category) {
+        query += `&age_group=${ageGroup}&gender=${gender}&subcategory=${category}`;
+      } else if (section === 'kids' && ageGroup && gender) {
         query += `&age_group=${ageGroup}&gender=${gender}`;
       } else if (category) {
         query += `&subcategory=${category}`;
