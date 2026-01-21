@@ -419,7 +419,9 @@ export const AddProductPage = () => {
       });
 
       // Navigate back to products page
-      if (section === 'kids' && ageGroup && gender) {
+      if (section === 'kids' && ageGroup && gender && category) {
+        navigate(`/owner/products/${section}/${ageGroup}/${gender}/${category}`);
+      } else if (section === 'kids' && ageGroup && gender) {
         navigate(`/owner/products/${section}/${ageGroup}/${gender}`);
       } else {
         navigate(`/owner/products/${section}/${category}`);
