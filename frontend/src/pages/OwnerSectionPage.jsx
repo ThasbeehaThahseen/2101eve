@@ -50,10 +50,10 @@ export const OwnerSectionPage = () => {
         { id: 'girls-12-15', name: 'Girls (12-15 years)', ageGroup: '12-15', gender: 'girl' }
       ],
       accessories: [
-        { id: 'belts', name: 'Belts', directToAdd: true },
-        { id: 'towels', name: 'Towels', directToAdd: true },
-        { id: 'kerchief', name: 'Kerchief', directToAdd: true },
-        { id: 'others', name: 'Others', directToAdd: true }
+        { id: 'belts', name: 'Belts' },
+        { id: 'towels', name: 'Towels' },
+        { id: 'handkerchiefs', name: 'Handkerchiefs' },
+        { id: 'others', name: 'Others' }
       ]
     };
 
