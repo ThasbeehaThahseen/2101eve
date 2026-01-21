@@ -86,8 +86,15 @@ export const OwnerProductsPage = () => {
   };
 
   const handleAddProduct = () => {
-    if (section === 'kids' && ageGroup && gender) {
-      navigate(`/owner/add-product/${section}/${ageGroup}/${gender}`);
+    if (section === 'kids' && ageGroup && gender && category) {
+      navigate(`/owner/add-product/${section}/${ageGroup}/${gender}/${category}`);
+    } else if (section === 'kids' && ageGroup && gender) {
+      // Redirect to choose subcategory first
+      toast({
+        title: 'Select Subcategory',
+        description: 'Please select a subcategory first',
+        variant: 'default'
+      });
     } else {
       navigate(`/owner/add-product/${section}/${category}`);
     }
