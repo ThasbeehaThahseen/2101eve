@@ -158,9 +158,8 @@ FABRIC_OPTIONS = [
 ]
 
 # Size options
-SIZE_OPTIONS_LETTERS = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"]
-SIZE_OPTIONS_NUMBERS = ["24", "26", "28", "30", "32", "34", "36", "38", "40", "42", "44", "46", "48"]
-SIZE_OPTIONS_KIDS = ["0-1Y", "1-2Y", "2-3Y", "3-4Y", "4-5Y", "5-6Y", "6-7Y", "7-8Y", "8-9Y", "9-10Y", "10-11Y", "11-12Y", "12-13Y", "13-14Y", "14-15Y"]
+SIZE_OPTIONS_LETTERS = ["XS", "S", "M", "L", "XL", "XXL", "XXXL", "Standard Size"]
+SIZE_OPTIONS_NUMBERS = ["16", "18", "20", "22", "24", "26", "28", "30", "32", "34", "36", "38", "40", "42", "44", "46", "48"]
 
 # Kids Age Groups (broader ranges)
 AGE_GROUPS = ["0-3", "4-7", "8-11", "12-15"]
