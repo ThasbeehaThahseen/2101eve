@@ -717,8 +717,7 @@ async def get_sizes():
     """Get available sizes"""
     return {
         "letters": SIZE_OPTIONS_LETTERS,
-        "numbers": SIZE_OPTIONS_NUMBERS,
-        "kids": SIZE_OPTIONS_KIDS
+        "numbers": SIZE_OPTIONS_NUMBERS
     }
 
 @api_router.get("/metadata/age-groups")
