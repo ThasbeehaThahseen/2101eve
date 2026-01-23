@@ -225,14 +225,22 @@ export const OwnerDashboardPage = () => {
           <DialogHeader>
             <DialogTitle>Add New Product</DialogTitle>
             <DialogDescription>
-              Select a section and category for the new product
+              {selectedSection === 'kids' 
+                ? 'Select gender, age group, and subcategory for the new product'
+                : 'Select a section and category for the new product'}
             </DialogDescription>
           </DialogHeader>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '20px' }}>
             <div>
               <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>Section</label>
-              <Select value={selectedSection} onValueChange={setSelectedSection}>
+              <Select value={selectedSection} onValueChange={(value) => {
+                setSelectedSection(value);
+                setSelectedCategory('');
+                setSelectedGender('');
+                setSelectedAgeGroup('');
+                setSelectedSubcategory('');
+              }}>
                 <SelectTrigger data-testid="section-select">
                   <SelectValue placeholder="Select section" />
                 </SelectTrigger>
@@ -245,27 +253,91 @@ export const OwnerDashboardPage = () => {
               </Select>
             </div>
 
-            {selectedSection && (
-              <div>
-                <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>Category</label>
-                <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                  <SelectTrigger data-testid="category-select">
-                    <SelectValue placeholder="Select category" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {categoryMap[selectedSection]?.map((category) => (
-                      <SelectItem key={category.id} value={category.id}>
-                        {category.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
+            {selectedSection === 'kids' ? (
+              <>
+                {/* Kids Section: Gender Selection */}
+                <div>
+                  <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>Gender</label>
+                  <Select value={selectedGender} onValueChange={setSelectedGender}>
+                    <SelectTrigger data-testid="gender-select">
+                      <SelectValue placeholder="Select gender" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {kidsGenderOptions.map((gender) => (
+                        <SelectItem key={gender.id} value={gender.id}>
+                          {gender.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Kids Section: Age Group Selection */}
+                {selectedGender && (
+                  <div>
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>Age Group</label>
+                    <Select value={selectedAgeGroup} onValueChange={setSelectedAgeGroup}>
+                      <SelectTrigger data-testid="age-group-select">
+                        <SelectValue placeholder="Select age group" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {kidsAgeGroups.map((ageGroup) => (
+                          <SelectItem key={ageGroup.id} value={ageGroup.id}>
+                            {ageGroup.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                )}
+
+                {/* Kids Section: Subcategory Selection */}
+                {selectedAgeGroup && (
+                  <div>
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>Subcategory</label>
+                    <Select value={selectedSubcategory} onValueChange={setSelectedSubcategory}>
+                      <SelectTrigger data-testid="subcategory-select">
+                        <SelectValue placeholder="Select subcategory" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        {kidsSubcategories.map((subcat) => (
+                          <SelectItem key={subcat.id} value={subcat.id}>
+                            {subcat.name}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                )}
+              </>
+            ) : (
+              /* Other Sections: Category Selection */
+              selectedSection && (
+                <div>
+                  <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500' }}>Category</label>
+                  <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                    <SelectTrigger data-testid="category-select">
+                      <SelectValue placeholder="Select category" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {categoryMap[selectedSection]?.map((category) => (
+                        <SelectItem key={category.id} value={category.id}>
+                          {category.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              )
             )}
 
             <Button 
               onClick={handleProceedToAddProduct} 
-              disabled={!selectedSection || !selectedCategory}
+              disabled={
+                selectedSection === 'kids' 
+                  ? (!selectedGender || !selectedAgeGroup || !selectedSubcategory)
+                  : (!selectedSection || !selectedCategory)
+              }
               data-testid="proceed-add-product-btn"
             >
               Proceed to Add Product
