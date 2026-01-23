@@ -90,7 +90,7 @@ export const AddProductPage = () => {
 
   const [fabrics, setFabrics] = useState([]);
   const [colors, setColors] = useState([]);
-  const [sizeOptions, setSizeOptions] = useState({ letters: [], numbers: [], kids: [] });
+  const [sizeOptions, setSizeOptions] = useState({ letters: [], numbers: [] });
   const [detectedColor, setDetectedColor] = useState('');
   const [showColorPicker, setShowColorPicker] = useState(false);
   const [generatingDescription, setGeneratingDescription] = useState(false);
