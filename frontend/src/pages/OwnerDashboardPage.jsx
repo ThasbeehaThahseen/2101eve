@@ -88,16 +88,19 @@ export const OwnerDashboardPage = () => {
     setShowAddItemDialog(true);
     setSelectedSection('');
     setSelectedCategory('');
+    setSelectedGender('');
+    setSelectedAgeGroup('');
+    setSelectedSubcategory('');
   };
 
   const handleProceedToAddProduct = () => {
-    if (!selectedSection || !selectedCategory) return;
-
-    const category = categoryMap[selectedSection].find(c => c.id === selectedCategory);
-    
-    if (selectedSection === 'kids' && category) {
-      navigate(`/owner/add-product/${selectedSection}/${category.ageGroup}/${category.gender}`);
+    // For kids section: need gender, age group, and subcategory
+    if (selectedSection === 'kids') {
+      if (!selectedGender || !selectedAgeGroup || !selectedSubcategory) return;
+      navigate(`/owner/add-product/${selectedSection}/${selectedAgeGroup}/${selectedGender}/${selectedSubcategory}`);
     } else {
+      // For other sections: need category
+      if (!selectedCategory) return;
       navigate(`/owner/add-product/${selectedSection}/${selectedCategory}`);
     }
     
