@@ -46,18 +46,6 @@ export const OwnerDashboardPage = () => {
       { id: 'casual-wears', name: 'Casual Wears' },
       { id: 'inner-wears', name: 'Inner Wears' }
     ],
-    kids: [
-      { id: 'boys-0-3', name: 'Boys (0-3 years)', ageGroup: '0-3', gender: 'boys' },
-      { id: 'boys-3-6', name: 'Boys (3-6 years)', ageGroup: '3-6', gender: 'boys' },
-      { id: 'boys-6-9', name: 'Boys (6-9 years)', ageGroup: '6-9', gender: 'boys' },
-      { id: 'boys-9-12', name: 'Boys (9-12 years)', ageGroup: '9-12', gender: 'boys' },
-      { id: 'boys-12-15', name: 'Boys (12-15 years)', ageGroup: '12-15', gender: 'boys' },
-      { id: 'girls-0-3', name: 'Girls (0-3 years)', ageGroup: '0-3', gender: 'girls' },
-      { id: 'girls-3-6', name: 'Girls (3-6 years)', ageGroup: '3-6', gender: 'girls' },
-      { id: 'girls-6-9', name: 'Girls (6-9 years)', ageGroup: '6-9', gender: 'girls' },
-      { id: 'girls-9-12', name: 'Girls (9-12 years)', ageGroup: '9-12', gender: 'girls' },
-      { id: 'girls-12-15', name: 'Girls (12-15 years)', ageGroup: '12-15', gender: 'girls' }
-    ],
     accessories: [
       { id: 'belts', name: 'Belts' },
       { id: 'towels', name: 'Towels' },
@@ -65,6 +53,25 @@ export const OwnerDashboardPage = () => {
       { id: 'others', name: 'Others' }
     ]
   };
+
+  const kidsGenderOptions = [
+    { id: 'boy', name: 'Boy' },
+    { id: 'girl', name: 'Girl' }
+  ];
+
+  const kidsAgeGroups = [
+    { id: '0-3', name: '0-3 years' },
+    { id: '4-7', name: '4-7 years' },
+    { id: '8-11', name: '8-11 years' },
+    { id: '12-15', name: '12-15 years' }
+  ];
+
+  const kidsSubcategories = [
+    { id: 'traditional', name: 'Traditional' },
+    { id: 'party', name: 'Party Wears' },
+    { id: 'casual', name: 'Casual Wears' },
+    { id: 'nightwear', name: 'Night Wears' }
+  ];
 
   useEffect(() => {
     if (!loading && !isAuthenticated) {
