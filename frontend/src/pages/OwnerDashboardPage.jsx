@@ -26,6 +26,9 @@ export const OwnerDashboardPage = () => {
   const [showAddItemDialog, setShowAddItemDialog] = useState(false);
   const [selectedSection, setSelectedSection] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedGender, setSelectedGender] = useState('');
+  const [selectedAgeGroup, setSelectedAgeGroup] = useState('');
+  const [selectedSubcategory, setSelectedSubcategory] = useState('');
 
   const categoryMap = {
     men: [
