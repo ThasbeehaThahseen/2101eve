@@ -359,7 +359,13 @@ export const AddProductPage = () => {
       generateDescription();
     }
     if (canProceedToNextStep()) {
-      setCurrentStep(currentStep + 1);
+      // If editing from preview, return to preview (step 10)
+      if (editingFromPreview) {
+        setCurrentStep(10);
+        setEditingFromPreview(false);
+      } else {
+        setCurrentStep(currentStep + 1);
+      }
     } else {
       toast({
         title: 'Incomplete',
@@ -371,8 +377,19 @@ export const AddProductPage = () => {
 
   const prevStep = () => {
     if (currentStep > 0) {
-      setCurrentStep(currentStep - 1);
+      // If editing from preview, return to preview instead of previous step
+      if (editingFromPreview) {
+        setCurrentStep(10);
+        setEditingFromPreview(false);
+      } else {
+        setCurrentStep(currentStep - 1);
+      }
     }
+  };
+
+  const handleEditFromPreview = (stepNumber) => {
+    setEditingFromPreview(true);
+    setCurrentStep(stepNumber);
   };
 
   const handlePublish = async () => {
