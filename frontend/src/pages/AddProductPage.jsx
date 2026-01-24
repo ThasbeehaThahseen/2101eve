@@ -68,6 +68,7 @@ export const AddProductPage = () => {
   const { toast } = useToast();
 
   const [currentStep, setCurrentStep] = useState(0);
+  const [editingFromPreview, setEditingFromPreview] = useState(false);
   const [formData, setFormData] = useState({
     images: [],
     fabric: '',
