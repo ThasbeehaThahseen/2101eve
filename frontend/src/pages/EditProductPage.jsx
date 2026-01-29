@@ -97,9 +97,6 @@ export const EditProductPage = () => {
   const [generatingDescription, setGeneratingDescription] = useState(false);
   const [detectingColor, setDetectingColor] = useState(false);
 
-  // Derive section from formData.category for size selection
-  const section = formData.category || '';
-
   useEffect(() => {
     if (!loading && !isAuthenticated) {
       navigate('/login');
