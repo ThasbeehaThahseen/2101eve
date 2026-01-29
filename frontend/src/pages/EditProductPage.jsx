@@ -906,7 +906,7 @@ export const EditProductPage = () => {
                 <div className="preview-section">
                   <div className="preview-header">
                     <h4>Images</h4>
-                    <Button size="sm" variant="ghost" onClick={() => setCurrentStep(0)} data-testid="edit-images">
+                    <Button size="sm" variant="ghost" onClick={() => handleEditFromPreview(0)} data-testid="edit-images">
                       <Edit2 size={16} /> Edit
                     </Button>
                   </div>
@@ -920,7 +920,7 @@ export const EditProductPage = () => {
                 <div className="preview-section">
                   <div className="preview-header">
                     <h4>Fabric</h4>
-                    <Button size="sm" variant="ghost" onClick={() => setCurrentStep(1)} data-testid="edit-fabric">
+                    <Button size="sm" variant="ghost" onClick={() => handleEditFromPreview(1)} data-testid="edit-fabric">
                       <Edit2 size={16} /> Edit
                     </Button>
                   </div>
@@ -930,7 +930,7 @@ export const EditProductPage = () => {
                 <div className="preview-section">
                   <div className="preview-header">
                     <h4>Primary Color</h4>
-                    <Button size="sm" variant="ghost" onClick={() => setCurrentStep(2)} data-testid="edit-primary-color">
+                    <Button size="sm" variant="ghost" onClick={() => handleEditFromPreview(2)} data-testid="edit-primary-color">
                       <Edit2 size={16} /> Edit
                     </Button>
                   </div>
@@ -941,7 +941,7 @@ export const EditProductPage = () => {
                   <div className="preview-section">
                     <div className="preview-header">
                       <h4>Available Colors</h4>
-                      <Button size="sm" variant="ghost" onClick={() => setCurrentStep(3)} data-testid="edit-colors">
+                      <Button size="sm" variant="ghost" onClick={() => handleEditFromPreview(3)} data-testid="edit-colors">
                         <Edit2 size={16} /> Edit
                       </Button>
                     </div>
@@ -952,7 +952,7 @@ export const EditProductPage = () => {
                 <div className="preview-section">
                   <div className="preview-header">
                     <h4>Sizes</h4>
-                    <Button size="sm" variant="ghost" onClick={() => setCurrentStep(4)} data-testid="edit-sizes">
+                    <Button size="sm" variant="ghost" onClick={() => handleEditFromPreview(4)} data-testid="edit-sizes">
                       <Edit2 size={16} /> Edit
                     </Button>
                   </div>
@@ -962,7 +962,7 @@ export const EditProductPage = () => {
                 <div className="preview-section">
                   <div className="preview-header">
                     <h4>Item Name</h4>
-                    <Button size="sm" variant="ghost" onClick={() => setCurrentStep(5)} data-testid="edit-item-name">
+                    <Button size="sm" variant="ghost" onClick={() => handleEditFromPreview(5)} data-testid="edit-item-name">
                       <Edit2 size={16} /> Edit
                     </Button>
                   </div>
@@ -972,7 +972,7 @@ export const EditProductPage = () => {
                 <div className="preview-section">
                   <div className="preview-header">
                     <h4>Short Description</h4>
-                    <Button size="sm" variant="ghost" onClick={() => setCurrentStep(5)} data-testid="edit-short-desc">
+                    <Button size="sm" variant="ghost" onClick={() => handleEditFromPreview(5)} data-testid="edit-short-desc">
                       <Edit2 size={16} /> Edit
                     </Button>
                   </div>
@@ -982,7 +982,7 @@ export const EditProductPage = () => {
                 <div className="preview-section">
                   <div className="preview-header">
                     <h4>Detailed Description</h4>
-                    <Button size="sm" variant="ghost" onClick={() => setCurrentStep(6)} data-testid="edit-detailed-desc">
+                    <Button size="sm" variant="ghost" onClick={() => handleEditFromPreview(6)} data-testid="edit-detailed-desc">
                       <Edit2 size={16} /> Edit
                     </Button>
                   </div>
@@ -992,7 +992,7 @@ export const EditProductPage = () => {
                 <div className="preview-section">
                   <div className="preview-header">
                     <h4>Price</h4>
-                    <Button size="sm" variant="ghost" onClick={() => setCurrentStep(7)} data-testid="edit-price">
+                    <Button size="sm" variant="ghost" onClick={() => handleEditFromPreview(7)} data-testid="edit-price">
                       <Edit2 size={16} /> Edit
                     </Button>
                   </div>
@@ -1002,7 +1002,7 @@ export const EditProductPage = () => {
                 <div className="preview-section">
                   <div className="preview-header">
                     <h4>Fresh Arrival Status</h4>
-                    <Button size="sm" variant="ghost" onClick={() => setCurrentStep(8)} data-testid="edit-fresh-arrival">
+                    <Button size="sm" variant="ghost" onClick={() => handleEditFromPreview(8)} data-testid="edit-fresh-arrival">
                       <Edit2 size={16} /> Edit
                     </Button>
                   </div>
