@@ -741,60 +741,39 @@ export const EditProductPage = () => {
               <div className="step-content" data-testid="step-sizes">
                 <p className="step-instruction">Select available sizes</p>
                 
-                {section === 'kids' ? (
-                  <div className="sizes-section">
-                    <h4>Kids Sizes</h4>
-                    <div className="sizes-grid">
-                      {sizeOptions.kids.map((size) => (
-                        <Button
-                          key={size}
-                          variant={formData.sizes.includes(size) ? "default" : "outline"}
-                          onClick={() => toggleSize(size)}
-                          data-testid={`size-${size}`}
-                        >
-                          {size}
-                          {formData.sizes.includes(size) && <Check size={16} className="ml-2" />}
-                        </Button>
-                      ))}
-                    </div>
+                <div className="sizes-section">
+                  <h4>Letter Sizes</h4>
+                  <div className="sizes-grid">
+                    {sizeOptions.letters.map((size) => (
+                      <Button
+                        key={size}
+                        variant={formData.sizes.includes(size) ? "default" : "outline"}
+                        onClick={() => toggleSize(size)}
+                        data-testid={`size-${size}`}
+                      >
+                        {size}
+                        {formData.sizes.includes(size) && <Check size={16} className="ml-2" />}
+                      </Button>
+                    ))}
                   </div>
-                ) : (
-                  <>
-                    <div className="sizes-section">
-                      <h4>Letter Sizes</h4>
-                      <div className="sizes-grid">
-                        {sizeOptions.letters.map((size) => (
-                          <Button
-                            key={size}
-                            variant={formData.sizes.includes(size) ? "default" : "outline"}
-                            onClick={() => toggleSize(size)}
-                            data-testid={`size-${size}`}
-                          >
-                            {size}
-                            {formData.sizes.includes(size) && <Check size={16} className="ml-2" />}
-                          </Button>
-                        ))}
-                      </div>
-                    </div>
+                </div>
 
-                    <div className="sizes-section">
-                      <h4>Number Sizes</h4>
-                      <div className="sizes-grid">
-                        {sizeOptions.numbers.map((size) => (
-                          <Button
-                            key={size}
-                            variant={formData.sizes.includes(size) ? "default" : "outline"}
-                            onClick={() => toggleSize(size)}
-                            data-testid={`size-${size}`}
-                          >
-                            {size}
-                            {formData.sizes.includes(size) && <Check size={16} className="ml-2" />}
-                          </Button>
-                        ))}
-                      </div>
-                    </div>
-                  </>
-                )}
+                <div className="sizes-section">
+                  <h4>Number Sizes</h4>
+                  <div className="sizes-grid">
+                    {sizeOptions.numbers.map((size) => (
+                      <Button
+                        key={size}
+                        variant={formData.sizes.includes(size) ? "default" : "outline"}
+                        onClick={() => toggleSize(size)}
+                        data-testid={`size-${size}`}
+                      >
+                        {size}
+                        {formData.sizes.includes(size) && <Check size={16} className="ml-2" />}
+                      </Button>
+                    ))}
+                  </div>
+                </div>
 
                 <p className="selected-count">
                   {formData.sizes.length} sizes selected
